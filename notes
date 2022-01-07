@@ -1,0 +1,12 @@
+"https://londonappdeveloper.com/deploying-django-with-docker-compose/"
+
+create requirements.txt - enter django version looking in pypi
+create a Dockerfile in Root directory 
+go to dockerhub search for alpine python image TAG and insert into dockerfile
+crate docker-compose.yml
+create a new directory in app
+docker-compose build
+docker-compose run --rm app sh -c "django-admin startproject app ."
+update settings.py to update environment values
+update dockerfile
+docker-compose run --rm app sh -c "python manage.py startapp core"
