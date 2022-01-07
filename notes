@@ -10,3 +10,26 @@ docker-compose run --rm app sh -c "django-admin startproject app ."
 update settings.py to update environment values
 update dockerfile
 docker-compose run --rm app sh -c "python manage.py startapp core"
+
+///////////////////////////////////////////////
+Production ready app
+
+create proxyfolder in root directory
+handle  all the static and media file request and forward all other request to django app
+
+inside proxy add uwsgi_params file - defined list of header parameters .it allows create a file that  to maps
+different headers that request to send to uwsgi server
+https://uwsgi-docs.readthedocs.io/en/latest/Nginx.html#what-is-the-uwsgi-params-file
+
+add default.config.tpl - this ngnix set up file that ngnix knows how to handle the request
+
+
+create a new script inside the proxy model
+run.sh - #!/bin/sh run in bashshell script
+
+
+
+
+
+
+
